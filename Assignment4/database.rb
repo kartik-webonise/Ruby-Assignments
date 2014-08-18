@@ -1,6 +1,6 @@
-require_relative 'data_vehicle'
-require 'mysql'
 
+require 'mysql'
+require_relative 'data_vehicle'
 con=Mysql.new 'localhost', 'user12', '34klq*', 'vehicledb'
 
 con.query("create table IF NOT EXISTS VehicleInfo (vehicles varchar(50),dates varchar(50), locations varchar(255), speeds varchar(10))")
@@ -19,4 +19,11 @@ for j in 0...7
   
   end
 end
+
+
+#obj=Database.new
+#obj.connect
+
+
+
 
