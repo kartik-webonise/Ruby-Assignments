@@ -9,11 +9,11 @@ class Kaprekar
     k == (a+b)
   end
 
-def  simple_test(i)
+def  find(i)
   if check_kaprekar(i) == true then
       p "#{i} is Kaprekar Number"
   elsif check_kaprekar(i) == false then
-    "#{i} is not a Kaprekar Number"
+     p "#{i} is not a Kaprekar Number"
   end
 end
 
@@ -22,4 +22,4 @@ end
 obj=Kaprekar.new
 puts "Enter the number to check"
 number=Integer(gets.chomp)
-obj.simple_test(number)
+obj.find(number)
