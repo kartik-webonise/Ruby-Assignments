@@ -1,5 +1,5 @@
 class Operations
-  
+
   def nonrepeat
     arr=[1,2,2,3,3,4,5]
     puts "The array is #{arr}"
@@ -32,9 +32,9 @@ class Operations
     puts "The combined string is :: #{string3}"
   end
 
-  def dateTime
+  def date_time
     time=Time.now
-    year=time.year 
+    year=time.year
     month=time.month
     day=time.day
     puts "Today's date is #{day}/#{month}/#{year}"
@@ -49,7 +49,7 @@ class Operations
     end
   end
 
-  def remove_html(string1) 
+  def remove_html(string1)
     new_string=string1.gsub(%r{</?[^>]+?>}, '')
     puts "String after removing HTML Tags is :: "
     puts new_string
@@ -64,9 +64,9 @@ class Operations
     len1=string1.length
     len2=string2.length
     puts "Length of string1 is #{len1}"
-    puts "Length of string2 is #{len2}"    
+    puts "Length of string2 is #{len2}"
   end
-  
+
   def compare_date
     require 'date'
     puts "Date1 is : 12-04-2010"
@@ -74,19 +74,38 @@ class Operations
     date1= Date.parse("12-04-2010")
     date2= Date.parse("12-05-2011")
     date_diff=date2-date1
-    puts "The days difference is #{date_diff}"  
+    puts "The days difference is #{date_diff}"
   end
 
   def add_date
     date_new=Time.now+(1*7*24*60*60)
-    year=date_new.year 
+    year=date_new.year
     month=date_new.month
     day=date_new.day
-    dateTime
+    date_time
     puts "Date after 7 days is #{day}/#{month}/#{year}"
-    
+
   end
- 
+
+  def array_date
+    t=Time.now
+    t=t.to_a
+    puts "Date in array format is::"
+    p t
+  end
+
+  def rev_string(string1)
+    str=string1.split('.')
+    part1=str[0].reverse
+    part2=str[1].reverse
+    new=part2+part1
+    puts "String in reverse letter sequence is ::"
+    puts new
+    puts "String in reverse word sequence is ::"
+    reverse_string=string1.split(/(\s+)/).reverse.join('')
+    p reverse_string
+  end
+
 end
 
 string1="RUBY parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as RUBY code. The parser then executes all of the code it finds until it runs into a RUBY closing <br/> tag."
@@ -102,7 +121,7 @@ check.capital(string1)
 puts
 check.combine(string1,string2)
 puts
-check.dateTime
+check.date_time
 puts
 check.split_method(string1)
 puts
@@ -115,3 +134,7 @@ puts
 check.compare_date
 puts
 check.add_date
+puts
+check.array_date
+puts
+check.rev_string(string1)
